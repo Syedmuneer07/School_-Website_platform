@@ -1,0 +1,15 @@
+
+.env
+/node_modules
+/dist
+/logs
+*.log
+
+# Optional: Ignore IDE specific files
+.vscode/    
+.idea/
+*.suo
+# Optional: Ignore OS specific files
+.DS_Store
+Thumbs.db   
+
