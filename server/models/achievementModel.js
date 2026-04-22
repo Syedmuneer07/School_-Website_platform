@@ -1,10 +1,6 @@
 const { Achievement } = require("./");
 
-exports.list = () => Achievement.findAll({ order: [["id", "DESC"]] });
+exports.list = () => Achievement.find().sort({ _id: -1 });
 exports.create = (a) => Achievement.create(a);
-exports.update = async (id, a) => {
-  const record = await Achievement.findByPk(id);
-  if (!record) return null;
-  return record.update(a);
-};
-exports.remove = (id) => Achievement.destroy({ where: { id } });
+exports.update = (id, a) => Achievement.findByIdAndUpdate(id, a, { new: true });
+exports.remove = (id) => Achievement.findByIdAndDelete(id);

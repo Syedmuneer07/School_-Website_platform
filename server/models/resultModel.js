@@ -1,11 +1,8 @@
+
 const { Result } = require("./");
 
-exports.findByRoll = (roll) => Result.findAll({ where: { roll_number: roll }, order: [["subject", "ASC"]] });
+exports.findByRoll = (roll) => Result.find({ roll_number: roll }).sort({ subject: 1 });
 exports.create = (r) => Result.create(r);
-exports.list = () => Result.findAll({ order: [["id", "DESC"]] });
-exports.update = async (id, r) => {
-  const record = await Result.findByPk(id);
-  if (!record) return null;
-  return record.update(r);
-};
-exports.remove = (id) => Result.destroy({ where: { id } });
+exports.list = () => Result.find().sort({ _id: -1 });
+exports.update = (id, r) => Result.findByIdAndUpdate(id, r, { new: true });
+exports.remove = (id) => Result.findByIdAndDelete(id);

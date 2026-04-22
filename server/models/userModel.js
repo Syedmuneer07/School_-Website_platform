@@ -1,3 +1,4 @@
+
 const { User } = require("./");
 
-exports.findByUsername = (username) => User.findOne({ where: { username } });
+exports.findByUsername = (username) => User.findOne({ username });

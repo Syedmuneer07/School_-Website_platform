@@ -1,15 +1,20 @@
-const { Sequelize } = require("sequelize");
+
+const mongoose = require("mongoose");
+const dns = require("dns");
+
+dns.setServers(['1.1.1.1', '8.8.8.8']);
 require("dotenv").config();
 
-const connectionString = process.env.DATABASE_URL;
-if (!connectionString) {
-  throw new Error("DATABASE_URL is required in the environment for Sequelize.");
+
+const mongoUri = process.env.MONGODB_URI;
+if (!mongoUri) {
+  throw new Error("MONGODB_URI is required in the environment for Mongoose.");
 }
 
-const sequelize = new Sequelize(connectionString, {
-  dialect: "postgres",
-  protocol: "postgres",
-  logging: false,
-});
+mongoose.connect(mongoUri);
 
-module.exports = sequelize;
+const db = mongoose.connection;
+db.on("error", (err) => console.error("MongoDB connection error:", err));
+db.once("open", () => console.log("MongoDB connected"));
+
+module.exports = mongoose;

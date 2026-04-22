@@ -1,11 +1,10 @@
+
 const { Alumni } = require("./");
 
-exports.list = () => Alumni.findAll({ order: [["id", "DESC"]] });
+exports.list = () => Alumni.find().sort({ _id: -1 });
 exports.create = (a) => Alumni.create(a);
 exports.update = async (id, a) => {
-  const record = await Alumni.findByPk(id);
-  if (!record) return null;
-  return record.update(a);
+  return Alumni.findByIdAndUpdate(id, a, { new: true });
 };
-exports.remove = (id) => Alumni.destroy({ where: { id } });
+exports.remove = (id) => Alumni.findByIdAndDelete(id);
 

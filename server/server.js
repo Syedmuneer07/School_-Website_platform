@@ -9,7 +9,7 @@ const resultRoutes = require("./routes/resultRoutes");
 const alumniRoutes = require("./routes/alumniRoutes");
 const eventRoutes = require("./routes/eventRoutes");
 const contactRoutes = require("./routes/contactRoutes");
-const { sequelize } = require("./models");
+
 
 const app = express();
 
@@ -35,14 +35,13 @@ app.use((err, _req, res, _next) => {
 
 const PORT = process.env.PORT || 5000;
 
-(async () => {
-  try {
-    await sequelize.authenticate();
-    await sequelize.sync();
-    console.log("Database connected and synced.");
-    app.listen(PORT, () => console.log(`API running on http://localhost:${PORT}`));
-  } catch (err) {
-    console.error("Unable to start server:", err);
-    process.exit(1);
-  }
-})();
+
+const mongoose = require("./config/db");
+
+mongoose.connection.once("open", () => {
+  app.listen(PORT, () => console.log(`API running on http://localhost:${PORT}`));
+});
+mongoose.connection.on("error", (err) => {
+  console.error("Unable to start server:", err);
+  process.exit(1);
+});

@@ -1,0 +1,75 @@
+
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy",
+      "role": "admin"
+    }
+  ],
+  "achievements": [
+    {
+      "student_name": "Aarav Singh",
+      "title": "National Math Olympiad — Gold",
+      "description": "Top score among 12,000 students nationwide.",
+      "image_url": "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800"
+    },
+    {
+      "student_name": "Meera Patel",
+      "title": "State Science Fair Winner",
+      "description": "Built a low-cost water purifier prototype.",
+      "image_url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800"
+    },
+    {
+      "student_name": "Rohan Das",
+      "title": "Under-16 Cricket Captain",
+      "description": "Led the team to district championship.",
+      "image_url": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=800"
+    }
+  ],
+  "marks": [
+    { "student_name": "Aarav Singh", "roll_number": "R001", "subject": "Mathematics", "marks": 98 },
+    { "student_name": "Aarav Singh", "roll_number": "R001", "subject": "Science", "marks": 94 },
+    { "student_name": "Aarav Singh", "roll_number": "R001", "subject": "English", "marks": 88 },
+    { "student_name": "Meera Patel", "roll_number": "R002", "subject": "Mathematics", "marks": 91 },
+    { "student_name": "Meera Patel", "roll_number": "R002", "subject": "Science", "marks": 96 },
+    { "student_name": "Meera Patel", "roll_number": "R002", "subject": "English", "marks": 90 }
+  ],
+  "alumni": [
+    {
+      "name": "Priya Sharma",
+      "company": "Google",
+      "role": "Software Engineer",
+      "story": "School gave me the curiosity that fuels my career today."
+    },
+    {
+      "name": "Karan Mehta",
+      "company": "ISRO",
+      "role": "Aerospace Engineer",
+      "story": "My love for physics started in the school lab."
+    },
+    {
+      "name": "Anika Roy",
+      "company": "Tata Memorial",
+      "role": "Oncologist",
+      "story": "Mentors here pushed me to dream bigger."
+    }
+  ],
+  "events": [
+    {
+      "title": "Annual Sports Day",
+      "description": "Track & field, team sports and prize distribution.",
+      "date": "<set to a date 14 days from now>"
+    },
+    {
+      "title": "Science Exhibition",
+      "description": "Student-led demos open to parents and guests.",
+      "date": "<set to a date 30 days from now>"
+    },
+    {
+      "title": "Parent–Teacher Meeting",
+      "description": "Quarterly progress discussion.",
+      "date": "<set to a date 7 days from now>"
+    }
+  ]
+}
