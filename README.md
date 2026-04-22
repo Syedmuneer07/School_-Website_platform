@@ -1,4 +1,5 @@
-# School Website Platform
+# School Website Platform Live
+https://school-website-platform.onrender.com/
 
 Full-stack starter for a startup that builds personalized websites for schools.
 
