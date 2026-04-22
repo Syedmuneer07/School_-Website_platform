@@ -13,7 +13,7 @@ const contactRoutes = require("./routes/contactRoutes");
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_ORIGIN || "*" }));
+app.use(cors({ origin: process.env.CLIENT_ORIGIN || "https://school-website-platform.onrender.com" }));
 app.use(express.json());
 
 // Health check
